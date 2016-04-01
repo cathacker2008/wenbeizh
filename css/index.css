@@ -43,17 +43,29 @@ a {
 	position:relative;
 	width:100%;
 	min-height:700px;
-	/*opacity:0.2;*/
-	/*background-color:#D6E0AA;*/
-	/*background:no-repeat fixed;*/
 	background-position:0 0;
-	background-size:auto 100%;
+	background-size:100% auto;
+	background-repeat:no-repeat;
 }
-.content >div {
-	position:relative;
-	background:no-repeat fixed;
-	background-position:0 0;
-	background-size:100%;
+.content .left,.content .right{
+	position:absolute;
+	top:50%;
+	height:30px;
+	width:30px;
+	border-left:2px solid #65B2CA;
+	border-right:2px solid #65B2CA;
+	border-radius:8px;
+	color:#09F9DC;
+	font-size:30px;
+	text-align:center;
+	cursor:pointer;
+	line-height:25px;
+}
+.left {
+	left:10px;
+}
+.right{
+	right:10px;
 }
 .footer{
 	position:relative;
