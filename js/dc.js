@@ -598,8 +598,12 @@
 	}  
 
 	/*****相对屏幕绝对居中****/
-	$dc.absCenter = function(dom){
-		var reSize = function(){
+	$dc.absCenter = function(obj){
+		if(!obj){return;}
+		if(obj instanceof jQuery){
+			obj.css({'position':'fixed','top':'50%','left':'50%','marginTop':'-'+dom.clientHeight/2+'px','marginLeft':'-'+dom.clientWidth/2+'px','display':'block'});
+		}else{
+			$(obj).css({'position':'fixed','top':'50%','left':'50%','marginTop':'-'+dom.clientHeight/2+'px','marginLeft':'-'+dom.clientWidth/2+'px','display':'block'});
 		}
 	} 
 	/*****克隆对象*****/
