@@ -599,11 +599,17 @@
 
 	/*****相对屏幕绝对居中****/
 	$dc.absCenter = function(obj){
+		var doCenter = function(dom){
+			$(dom).css({'position':'fixed','top':'50%','left':'50%','marginTop':'-'+dom.clientHeight/2+'px','marginLeft':'-'+dom.clientWidth/2+'px','display':'block'});
+		}
 		if(!obj){return;}
 		if(obj instanceof jQuery){
-			obj.css({'position':'fixed','top':'50%','left':'50%','marginTop':'-'+dom.clientHeight/2+'px','marginLeft':'-'+dom.clientWidth/2+'px','display':'block'});
+			if (obj.length <1){return;}
+			$.each(obj,function(i,n){
+				doCenter(n);
+			});	
 		}else{
-			$(obj).css({'position':'fixed','top':'50%','left':'50%','marginTop':'-'+dom.clientHeight/2+'px','marginLeft':'-'+dom.clientWidth/2+'px','display':'block'});
+			doCenter(obj);
 		}
 	} 
 	/*****克隆对象*****/
