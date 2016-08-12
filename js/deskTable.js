@@ -61,6 +61,7 @@
 			$dc.fset(checkBox,'w','30px');
 			$dc.fset(this.input,'w','14px');
 			$dc.fset(this.input,'h','14px');
+			$(this.input).css({'position':'relative','vertical-align':'middle'});
 			$(this.input).change(function(){
 				table.checkData = [];
 				var opt = this.checked?true:false;
@@ -331,6 +332,7 @@
 					var td = $dc.createDom('td:desk-table-body-col d-none','',null,this.dom);
 					this.checkBox= $dc.createDom('input:','',null,null);
 					this.checkBox.setAttribute('type','checkbox');
+					$(this.checkBox).css({'position':'relative','vertical-align':'middle'});	
 					td.appendChild(this.checkBox);
 					$dc.fset(this.checkBox,'w','14px');
 					$dc.fset(this.checkBox,'h','14px');
